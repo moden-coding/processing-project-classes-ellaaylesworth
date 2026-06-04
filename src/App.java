@@ -6,8 +6,11 @@ public class App extends PApplet {
     ArrayList<Brick> bricks;
     ArrayList<Control> controls;
     Control control;
+    Ball ball;
     int scene;
     int speed = 5;
+    
+
     boolean moveLeft = false;
     boolean moveRight = false;
 
@@ -17,7 +20,7 @@ public class App extends PApplet {
 
     public void setup() {
         bricks = new ArrayList<>();
-
+        ball = new Ball(475,575,this);
         brickMaker();
         controlMaker();
 
@@ -31,30 +34,29 @@ public class App extends PApplet {
     public void draw() {
         background(0);
         if (scene == 0) {
+          
 
             for (Brick b : bricks) {
                 b.display();
             }
+           
             control.display();
-            //  x = constrain(x, 45, 100 - 45);
+            ball.display();
+            
 
             if (moveLeft == true) {
 
                 control.goLeft();
+                control.constrainLeft();
 
             }
         }
         if (moveRight == true) {
 
             control.goRight();
-
+            control.constrainRight();
         }
-        // if (key == RIGHT) {
-        // moveLeft = true;
-        // }
-        // if (key == LEFT) {
-        // moveRight = true ;
-
+     
     }
 
     public void brickMaker() {
@@ -73,18 +75,12 @@ public class App extends PApplet {
     }
 
     public void controlMaker() {
+        int paddlex = 425;
+        int paddley = 600;
+        control = new Control(paddlex, paddley, this);
 
-        int x = 425;
-        int y = 600;
-        control = new Control(x, y, this);
-       
-            
-            
-        } public void constrain(){
-           
-        }
+    }
 
-    
     public void keyPressed() {
         if (keyCode == LEFT)
 

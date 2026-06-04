@@ -25,6 +25,7 @@ public class Brick {
     }
 
     public void display() {
+        screen.stroke(150,8,8);
         screen.fill(255, 90, 80);
         screen.rect(x, y, w, h, size);
 
