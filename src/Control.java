@@ -18,35 +18,47 @@ public class Control {
     }
 
     public void display() {
-        screen.stroke(10,10,150);
+        screen.stroke(10, 10, 150);
         screen.fill(40, 90, 255);
-        screen.rect(x, y, w, h,size);
-        
+        screen.rect(x, y, w, h, size);
 
     }
 
     public void goLeft() {
         x -= 10;
-        
 
     }
 
     public void goRight() {
         x += 10;
     }
-    public void constrainLeft(){
-        if (x < 0 ){
+
+    public void constrainLeft() {
+        if (x < 0) {
             x = 0;
 
-           
-        }
-
-    } public void constrainRight(){
-        if (x > 900 ){
-            x = 900;
-
-           
         }
 
     }
-}
+
+    public void constrainRight() {
+        if (x > 900) {
+            x = 900;
+
+        }
+
+    }
+    public int getX(){
+        return x;
+    } public int getY(){
+        return y;
+    }
+     public int getW(){
+        return w;
+    } public int getH(){
+        return h;
+    }
+
+   
+    }
+

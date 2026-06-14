@@ -1,10 +1,10 @@
 import processing.core.PApplet;
 
 public class Brick {
-    private int x;
-    private int y;
-    private int h;
-    private int w;
+    private float x;
+    private float y;
+    private float h;
+    private float w;
     private int color;
     private int health;
     private int points;
@@ -25,7 +25,7 @@ public class Brick {
     }
 
     public void display() {
-        screen.stroke(150,8,8);
+        screen.stroke(150, 8, 8);
         screen.fill(255, 90, 80);
         screen.rect(x, y, w, h, size);
 
@@ -34,4 +34,26 @@ public class Brick {
 
         }
     }
+
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
+     public float getW() {
+        return w;
+    }
+
+    public float getH() {
+        return h;
+    }
+
+    public void color() {
+        
+        screen.fill(2, 90, 80);
+        screen.rect(x, y, w, h, size);
+    }
+    
 }
